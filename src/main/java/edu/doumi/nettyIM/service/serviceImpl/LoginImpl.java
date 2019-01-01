@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginImpl implements Login {
-
     @Override
     public boolean login(String username, String password, Channel channel) {
         if(isValid(username)){
@@ -26,8 +25,8 @@ public class LoginImpl implements Login {
     }
 
     @Override
-    public boolean hasLogin(String username) {
-        return CommonInfo.userInfoLists.containsKey(username);
+    public boolean hasLogin(String channelId) {
+        return CommonInfo.channelHandlerMap.containsKey(channelId);
     }
 
     @Override
