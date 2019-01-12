@@ -1,20 +1,12 @@
 package edu.doumi.nettyIM.model;
 
+import edu.doumi.nettyBase.common.ChatType;
 import lombok.Data;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Data
 public class SessionEntity {
     private String sessionID;
-    private String[] UID;
-    private List<MessageEntity> msgDelayQueue;
-
-    public void putMsgDelayQueue(MessageEntity msg){
-        if(msgDelayQueue == null)
-            msgDelayQueue = Arrays.asList(msg);
-        else
-            msgDelayQueue.add(msg);
-    }
+    private ChatType chatType;
+    private String serviceState;
+    private String[] userList;
 }
